@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeDisplayHotelsComponent } from './home-display-hotels/home-display-hotels.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { HotelDisplayAdminComponent } from './hotel-display-admin/hotel-display-admin.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { HotelDisplayAdminComponent } from './hotel-display-admin/hotel-display-
     MatSnackBarModule,
     AppRoutingModule,
     MatSliderModule,
+    MatCardModule,
     
   ],
   providers: [],
