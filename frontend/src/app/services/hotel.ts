@@ -5,4 +5,5 @@ export interface Hotel {
   hotelEmail: string;
   description: string;
   hotelPhoneNumber: string;
+  imgUrl:string
 }

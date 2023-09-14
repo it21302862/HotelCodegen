@@ -30,7 +30,8 @@ export class HotelAddEditComponent implements OnInit{
       location: '',
       hotelEmail:'',
       description:'',
-      hotelPhoneNumber:''
+      hotelPhoneNumber:'',
+      imgUrl:'',
       
     })
   }
