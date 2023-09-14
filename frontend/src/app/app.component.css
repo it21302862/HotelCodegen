@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #1976d2; /* Set the background color */
+  display: flex; /* Make it a flex container */
+  justify-content: flex-end; /* Align buttons to the right */
+  padding: 10px; /* Add some padding */
+}
+
+.navbar button {
+  color: white; /* Set the text color */
+  margin-left: 10px; /* Add spacing between buttons */
+  text-transform: uppercase; /* Convert text to uppercase */
+  font-weight: bold; /* Make text bold */
+  text-decoration: none; /* Remove underlines from links */
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Add cursor pointer on hover */
+}
+
+.navbar button:hover {
+  text-decoration: none; /* Add underline on button hover */
+}
+
+
+ 
+
+  
