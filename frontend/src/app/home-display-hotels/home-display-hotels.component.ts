@@ -4,6 +4,7 @@ import { HotelService } from '../services/hotels.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry, MatIconModule} from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-display-hotels',
@@ -25,7 +26,7 @@ export class HomeDisplayHotelsComponent implements OnInit{
 `;
 
  
-  constructor(private hotelService:HotelService,iconRegistry: MatIconRegistry, sanitizer: DomSanitizer){
+  constructor(private hotelService:HotelService,iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,private router: Router){
     iconRegistry.addSvgIconLiteral('thumbs-up', sanitizer.bypassSecurityTrustHtml(this.THUMBUP_ICON));
   }
 
@@ -52,21 +53,6 @@ export class HomeDisplayHotelsComponent implements OnInit{
     );
   }
 
-  // public searchHotels(key: string): void {
-  //   console.log(key);
-  //   const results: Hotel[] = [];
-  //   for (const hotel of this.hotels) {
-  //     if (hotel.hotelName.toLowerCase().indexOf(key.toLowerCase()) !== -1
-  //     && hotel.location.toLowerCase().indexOf(key.toLowerCase()) !== -1
-  //     ) {
-  //       results.push(hotel);
-  //     }
-  //   }
-  //   this.hotels = results;
-  //   if (results.length === 0 || !key) {
-  //     this.getHotels();
-  //   }
-  // }
 
   public searchHotels(hotelName: string, location: string): void {
     const results: Hotel[] = [];
@@ -88,6 +74,10 @@ export class HomeDisplayHotelsComponent implements OnInit{
     } else {
       this.hotels = results;
     }
+  }
+
+  viewRoomTypes(hotelID: number) {
+    this.router.navigate(['/room-types', hotelID]);
   }
   
 

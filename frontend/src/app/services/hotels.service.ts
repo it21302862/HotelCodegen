@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Hotel } from './hotel';
+import { RoomType } from './roomtypes';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -27,6 +28,12 @@ export class HotelService {
   public deleteHotel(hotelID: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/api/v1/hotels/deleteHotel/${hotelID}`);
   }
+
+  public getAvailableRoomTypes(hotelID: number):Observable<RoomType[]> {
+    const url = `/api/v1/hotels/hotel/${hotelID}/available-room-types`; // Replace with your actual API endpoint URL
+    return this.http.get<RoomType[]>(`${this.apiServerUrl}${url}`);
+  }
+  
 
 
 }

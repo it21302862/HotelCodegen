@@ -1,0 +1,16 @@
+<div *ngIf="roomTypes.length > 0">
+    <h2>Available Room Types</h2>
+    <ul>
+      <li *ngFor="let roomType of roomTypes">
+        <strong>Room Type:</strong> {{ roomType.roomType }}<br>
+        <strong>No. of Rooms:</strong> {{ roomType.noOfRooms }}<br>
+        <strong>Max Adults:</strong> {{ roomType.maxAdults }}<br>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="roomTypes.length === 0">
+    <p>No available room types for this hotel.</p>
+  </div>
+  
+  
+  

@@ -21,13 +21,15 @@ import { HomeDisplayHotelsComponent } from './home-display-hotels/home-display-h
 import { MatSliderModule } from '@angular/material/slider';
 import { HotelDisplayAdminComponent } from './hotel-display-admin/hotel-display-admin.component';
 import {MatCardModule} from '@angular/material/card';
+import { RoomTypeComponent } from './room-type/room-type.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelAddEditComponent,
     HomeDisplayHotelsComponent,
-    HotelDisplayAdminComponent
+    HotelDisplayAdminComponent,
+    RoomTypeComponent
   ],
   imports: [
     BrowserModule,
