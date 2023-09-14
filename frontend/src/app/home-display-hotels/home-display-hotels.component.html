@@ -49,18 +49,19 @@
   <div class="container" id="main-container">
     <div class="row card-container">
       <div class="col-md-4" *ngFor="let hotel of hotels; let i = index">
-        <mat-card class="example-card">
+        <mat-card class="example-card card-item">
           <mat-card-header>
             <mat-card-title>{{ hotel.hotelName }}</mat-card-title>
             <mat-card-subtitle>{{ hotel.location }}</mat-card-subtitle>
           </mat-card-header>
           <img mat-card-image src="{{hotel.imgUrl}}" alt="Photo of a Hotel">
-          <mat-card-content>
+          <mat-card-content class="card-content">
             <p>{{hotel.description}}</p>
           </mat-card-content>
           <mat-card-actions>
-            <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
-            <button mat-button>LIKE</button>
+            <button mat-button class="like-button">
+              <mat-icon>thumb_up</mat-icon> LIKE
+            </button>
             <button mat-button>VIEW</button>
           </mat-card-actions>
         </mat-card>
