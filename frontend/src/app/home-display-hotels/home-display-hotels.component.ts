@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit ,ViewChild,ElementRef} from '@angular/core';
 import { Hotel } from '../services/hotel';
 import { HotelService } from '../services/hotels.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -31,7 +31,6 @@ export class HomeDisplayHotelsComponent implements OnInit{
 
   
   ngOnInit(): void {
-    console.log('ngOnInit is called');
     this.getHotels();
   }
 
@@ -51,6 +50,44 @@ export class HomeDisplayHotelsComponent implements OnInit{
         alert(error.message);
       }
     );
+  }
+
+  // public searchHotels(key: string): void {
+  //   console.log(key);
+  //   const results: Hotel[] = [];
+  //   for (const hotel of this.hotels) {
+  //     if (hotel.hotelName.toLowerCase().indexOf(key.toLowerCase()) !== -1
+  //     && hotel.location.toLowerCase().indexOf(key.toLowerCase()) !== -1
+  //     ) {
+  //       results.push(hotel);
+  //     }
+  //   }
+  //   this.hotels = results;
+  //   if (results.length === 0 || !key) {
+  //     this.getHotels();
+  //   }
+  // }
+
+  public searchHotels(hotelName: string, location: string): void {
+    const results: Hotel[] = [];
+    const key = hotelName.toLowerCase();
+    const locationKey = location.toLowerCase();
+
+    for (const hotel of this.hotels) {
+      const hotelNameLower = hotel.hotelName.toLowerCase();
+      const locationLower = hotel.location.toLowerCase();
+
+      if ((hotelNameLower.includes(key) && locationLower.includes(locationKey)) &&
+        (key.length > 0 && locationKey.length > 0)) {
+        results.push(hotel);
+      }
+    }
+
+    if (results.length === 0 || (!hotelName && !location)) {
+      this.getHotels();
+    } else {
+      this.hotels = results;
+    }
   }
   
 

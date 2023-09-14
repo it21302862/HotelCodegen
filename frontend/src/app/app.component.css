@@ -20,8 +20,7 @@
 }
 
 .navbar button:hover {
-  background-color: #e25633; /* Change the background color on hover */
-  text-decoration: underline;
+  color: #f4d8d1; /* Change the background color on hover */
 }
 
 /* Footer */
