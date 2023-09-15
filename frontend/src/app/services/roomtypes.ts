@@ -1,6 +1,8 @@
 export interface RoomType {
     roomTypeID:number,
     roomType: string;
-    noOfRooms:number;
-    maxAdults: number;
+    seasonName:string,
+    price:string
+    description:string,
+    imgUrl:string
   }

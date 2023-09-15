@@ -24,12 +24,14 @@ export class RoomTypeComponent implements OnInit {
 
       // Call the service to get available room types for the specified hotel
       this.hotelService.getAvailableRoomTypes(hotelID).subscribe(
-        (roomTypes: RoomType[]) => {
-          this.roomTypes = roomTypes;
-          console.log('Available Room Types:', this.roomTypes);
-        },
-        (error) => {
-          console.error('Error fetching room types:', error);
+        {
+          next: (roomTypes: RoomType[]) => {
+            this.roomTypes = roomTypes;
+            console.log('Available Room Types:', this.roomTypes);
+          },
+          error: (err) => {
+            console.error('Error fetching room types:', err);
+          }
         }
       );
     });

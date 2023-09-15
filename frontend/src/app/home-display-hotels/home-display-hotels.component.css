@@ -50,19 +50,19 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px; 
-  background-color: rgb(234, 215, 212);
-  max-width: 600px;
-  max-height: 100px;
+  background-color: rgb(14, 14, 81);
+  max-width: 800px;
+  max-height: 70px;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 15px auto;
   padding: 20px;
 }
 
 
 .search-field {
   border-radius: 10px;
-  margin: 2px; 
-  width: 150px; 
+  margin: 5px; 
+  max-width: 200px; 
 }
 
 
@@ -74,5 +74,14 @@
 .search-field ::ng-deep .mat-input-placeholder {
   color: #888; 
 }
+
+
+/* External CSS (in a separate .css file) */
+.orange-hr {
+  background-color: #f31606;
+  height: 3px; /* Optional: Set the height of the line */
+}
+
+
 
 
