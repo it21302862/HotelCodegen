@@ -22,6 +22,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { HotelDisplayAdminComponent } from './hotel-display-admin/hotel-display-admin.component';
 import {MatCardModule} from '@angular/material/card';
 import { RoomTypeComponent } from './room-type/room-type.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SlideBarComponent } from './slide-bar/slide-bar.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { RoomTypeComponent } from './room-type/room-type.component';
     HotelAddEditComponent,
     HomeDisplayHotelsComponent,
     HotelDisplayAdminComponent,
-    RoomTypeComponent
+    RoomTypeComponent,
+    SlideBarComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,7 @@ import { RoomTypeComponent } from './room-type/room-type.component';
     AppRoutingModule,
     MatSliderModule,
     MatCardModule,
+    MatSidenavModule
     
   ],
   providers: [],
