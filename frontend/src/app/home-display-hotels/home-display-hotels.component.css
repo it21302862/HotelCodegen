@@ -66,7 +66,7 @@
 
 
 .search-field {
-  border-radius: 10px;
+  border-radius: 50px;
   margin: 5px 0 5px 10px;
   max-width: 200px; 
   
@@ -75,6 +75,8 @@
 
 .search-field input {
   color: #333;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 
@@ -94,12 +96,13 @@
 .search-button {
   background-color: #f31606; 
   color: #fff; 
-  padding: 10px 20px; 
+  padding: 25px 25px;
   border-radius: 5px; 
   font-weight: bold; 
   transition: background-color 0.3s ease; 
   line-height: 1.5;
   margin-right: 2px;
+  margin: 0 0 5px 5px;
 
  
 }
