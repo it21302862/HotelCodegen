@@ -85,8 +85,12 @@ export class HomeDisplayHotelsComponent implements OnInit{
     }
   }
 
-  viewRoomTypes(hotelID: number) {
-    this.router.navigate(['/room-types', hotelID]);
+  viewRoomTypes(hotelID: number, hotelName: string) {
+    this.router.navigate(['/room-types', hotelID], {
+      queryParams: {
+        hotelName: hotelName,
+      },
+    });
   }
   
 

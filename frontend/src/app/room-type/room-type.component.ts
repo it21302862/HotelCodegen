@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HotelService } from '../services/hotels.service';
 import { RoomType } from '../services/roomtypes';
 
+
 @Component({
   selector: 'app-room-type',
   templateUrl: './room-type.component.html',
@@ -18,8 +19,7 @@ export class RoomTypeComponent implements OnInit {
   checkIn: string = '';
   checkOut: string = '';
   noOfPax: number = 1; // Default value for number of guests
-
-  
+  hotelName: string | null = null
 
   constructor(
     private hotelService: HotelService,
@@ -31,6 +31,8 @@ export class RoomTypeComponent implements OnInit {
     // Get the hotelID from the route parameters
     this.route.params.subscribe((params) => {
       const hotelID = +params['hotelID']; // Convert the parameter to a number
+      this.hotelName = this.route.snapshot.queryParams['hotelName'];
+      console.log('Hotel Name:', this.hotelName);
 
       // Call the service to get available room types for the specified hotel
       this.hotelService.getAvailableRoomTypes(hotelID).subscribe(
@@ -46,6 +48,7 @@ export class RoomTypeComponent implements OnInit {
       );
     });
   }
+
 
   selectRoomType(roomType: RoomType) {
     this.selectedRoomType = roomType;
