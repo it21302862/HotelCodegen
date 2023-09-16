@@ -31,6 +31,7 @@ import { TestComponent } from './test/test.component';
 import { MatInput } from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { GridListComponent } from './grid-list/grid-list.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { GridListComponent } from './grid-list/grid-list.component';
     MatCardModule,
     MatSidenavModule,
     FormsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTabsModule
     
   ],
   providers: [],
