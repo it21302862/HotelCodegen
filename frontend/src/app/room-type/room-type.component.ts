@@ -1,20 +1,26 @@
 
+
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotelService } from '../services/hotels.service';
 import { RoomType } from '../services/roomtypes';
 
 @Component({
   selector: 'app-room-type',
   templateUrl: './room-type.component.html',
-  styleUrls: ['./room-type.component.css']
+  styleUrls: ['./room-type.component.css'],
 })
 export class RoomTypeComponent implements OnInit {
   public roomTypes: RoomType[] = [];
+  selectedRoomType: RoomType | null = null; // Store the selected room type
+  checkIn: string = '';
+  checkOut: string = '';
+  noOfPax: number = 1; // Default value for number of guests
 
   constructor(
     private hotelService: HotelService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -31,10 +37,47 @@ export class RoomTypeComponent implements OnInit {
           },
           error: (err) => {
             console.error('Error fetching room types:', err);
-          }
+          },
         }
       );
     });
   }
+
+  selectRoomType(roomType: RoomType) {
+    this.selectedRoomType = roomType;
+  }
+
+  bookRoomType(selectedRoomType: RoomType | null) {
+
+    const formattedCheckIn = this.formatDate(this.checkIn);
+    const formattedCheckOut = this.formatDate(this.checkOut);
+    if (!selectedRoomType) {
+      console.error('No room type selected.');
+      return;
+    }
+
+    // Assuming you want to navigate to a booking page with parameters
+    this.router.navigate(['/booking'], {
+      queryParams: {
+        contractId: selectedRoomType.contractID,
+        roomTypeId: selectedRoomType.roomTypeID,
+        checkIn: formattedCheckIn,
+        checkOut: formattedCheckOut,
+        noOfPax: this.noOfPax,
+      },
+    });
+  }
+
+  private formatDate(date: string): string {
+    const formattedDate = new Date(date);
+    return (
+      formattedDate.getFullYear() +
+      '-' +
+      ('0' + (formattedDate.getMonth() + 1)).slice(-2) +
+      '-' +
+      ('0' + formattedDate.getDate()).slice(-2)
+    );
+  }
 }
+
 

@@ -25,6 +25,8 @@ import { RoomTypeComponent } from './room-type/room-type.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { BookingComponent } from './booking/booking.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HotelDisplayAdminComponent,
     RoomTypeComponent,
     SlideBarComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     AppRoutingModule,
     MatSliderModule,
     MatCardModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FormsModule
     
   ],
   providers: [],
