@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px; /* Adjust the gap as needed */
+  color:rgb(14, 14, 81)
 }
 
 .card-container .col-md-6 {
@@ -42,4 +43,57 @@
 
 .blue-button:hover {
   opacity: 1.2;
+}
+
+
+
+.booking-form {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 0 0 calc(33.33% - 10px); /* Adjust width as needed for 3 columns with some spacing */
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="date"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button.blue-button {
+  background-color: rgb(14, 14, 81);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.blue-button:hover {
+  background-color: #0056b3;
 }
