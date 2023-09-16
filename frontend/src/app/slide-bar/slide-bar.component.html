@@ -1,28 +1,20 @@
-<!-- <mat-drawer-container class="example-container">
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p><app-hotel-display-admin></app-hotel-display-admin></p>
-    </mat-drawer>
-  
-    <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        VIEW HOTELS
-      </button>
 
+
+  <div class="grid grid-cols-12 gap-4">
+    <!-- Buttons Section (4 columns) -->
+    <div class="col-span-12 md:col-span-4 flex flex-row gap-5">
+      <button (click)="showContent(1)">Button 1</button>
+      <button (click)="showContent(2)">Button 2</button>
+      <button (click)="showContent(3)">Button 3</button>
+      <button (click)="showContent(4)">Button 4</button>
     </div>
   
-  </mat-drawer-container> -->
-
-  <mat-drawer-container class="example-container">
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <app-hotel-display-admin></app-hotel-display-admin>
-    </mat-drawer>
-  
-    <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        VIEW HOTELS
-      </button>
-  
+    <!-- Content Section (8 columns) -->
+    <div class="col-span-12 md:col-span-8">
+      <!-- Display content here based on the selected button -->
+      <router-outlet></router-outlet>
     </div>
-  </mat-drawer-container> 
+  </div>
+  
 
 

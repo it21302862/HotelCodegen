@@ -7,6 +7,7 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BookingComponent } from './booking/booking.component'; 
 
+
 const routes: Routes = [
   { path: '', component: HomeDisplayHotelsComponent },
   { path: 'admin', component: HotelDisplayAdminComponent },

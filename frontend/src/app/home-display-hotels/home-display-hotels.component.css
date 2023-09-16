@@ -9,7 +9,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; /* Adjust as needed */
-    gap: 10px; /* Add gap between cards */
+    gap: 10px; 
+    color:rgb(14, 14, 81)/* Add gap between cards */
   }
   
   .card-container .col-md-6 {

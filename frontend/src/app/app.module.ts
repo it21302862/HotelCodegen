@@ -27,6 +27,7 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BookingComponent } from './booking/booking.component';
 import { FormsModule } from '@angular/forms';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     RoomTypeComponent,
     SlideBarComponent,
     AboutUsComponent,
-    BookingComponent
+    BookingComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

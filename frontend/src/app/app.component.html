@@ -3,10 +3,16 @@
   rel="stylesheet"
 />
 
-<div class="navbar">
+<div class="z-[20] navbar">
   <button mat-button routerLink="/">Home</button>
   <button mat-button routerLink="/about-us">About</button>
-  <button mat-button routerLink="/admin">Admin</button>
+  <div class="dropdown dropdown-bottom dropdown-end">
+    <label tabindex="0" class="btn m-1">Admin Dashboard</label>
+    <ul tabindex="0" class="dropdown-content z-[20] menu p-2 shadow bg-base-100 rounded-box w-52">
+      <li><a routerLink="/admin">VIEW HOTELS</a></li>
+      <li><a>VIEW CONTRACTS</a></li>
+    </ul>
+  </div>
 </div>
 
 
