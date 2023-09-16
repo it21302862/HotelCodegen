@@ -5,6 +5,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry, MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { MatInput } from '@angular/material/input';
+
 
 @Component({
   selector: 'app-home-display-hotels',
@@ -12,6 +14,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-display-hotels.component.css']
 })
 export class HomeDisplayHotelsComponent implements OnInit{
+
+  @ViewChild('locationInput', { static: true }) locationInput!: MatInput;
+  @ViewChild('hotelNameInput', { static: true }) hotelNameInput!: MatInput;
 
   public hotels: Hotel[] = [];
 
@@ -53,6 +58,10 @@ export class HomeDisplayHotelsComponent implements OnInit{
     );
   }
 
+  public onSearchInput(): void {
+    this.searchHotels(this.hotelNameInput.value, this.locationInput.value);
+  }
+  
 
   public searchHotels(hotelName: string, location: string): void {
     const results: Hotel[] = [];

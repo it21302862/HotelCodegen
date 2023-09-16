@@ -28,6 +28,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { BookingComponent } from './booking/booking.component';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
+import { MatInput } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +62,7 @@ import { TestComponent } from './test/test.component';
     MatSliderModule,
     MatCardModule,
     MatSidenavModule,
-    FormsModule
+    FormsModule,
     
   ],
   providers: [],
