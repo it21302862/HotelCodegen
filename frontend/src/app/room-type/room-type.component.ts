@@ -10,12 +10,16 @@ import { RoomType } from '../services/roomtypes';
   templateUrl: './room-type.component.html',
   styleUrls: ['./room-type.component.css'],
 })
+
+
 export class RoomTypeComponent implements OnInit {
   public roomTypes: RoomType[] = [];
   selectedRoomType: RoomType | null = null; // Store the selected room type
   checkIn: string = '';
   checkOut: string = '';
   noOfPax: number = 1; // Default value for number of guests
+
+  
 
   constructor(
     private hotelService: HotelService,

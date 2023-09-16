@@ -29,6 +29,8 @@ import { BookingComponent } from './booking/booking.component';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
 import { MatInput } from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { GridListComponent } from './grid-list/grid-list.component';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { MatInput } from '@angular/material/input';
     SlideBarComponent,
     AboutUsComponent,
     BookingComponent,
-    TestComponent
+    TestComponent,
+    GridListComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { MatInput } from '@angular/material/input';
     MatCardModule,
     MatSidenavModule,
     FormsModule,
+    MatGridListModule
     
   ],
   providers: [],
