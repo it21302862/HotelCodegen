@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BookingComponent } from './booking/booking.component'; 
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'dashboard', component: SlideBarComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'booking', component: BookingComponent },
+  { path: 'contact', component: ContactComponent },
 ];
 
 @NgModule({

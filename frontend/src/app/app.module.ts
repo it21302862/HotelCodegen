@@ -32,6 +32,7 @@ import { MatInput } from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { GridListComponent } from './grid-list/grid-list.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     AboutUsComponent,
     BookingComponent,
     TestComponent,
-    GridListComponent
+    GridListComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
