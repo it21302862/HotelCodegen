@@ -1,34 +1,16 @@
-<!-- <div class="search-bar">
-  <p>Where To?</p>
-  <mat-form-field>
-    <input
-      matInput
-      #hotelNameInput
-      (input)="searchHotels(hotelNameInput.value, locationInput.value)"
-      placeholder="Search Hotel?"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      #locationInput
-      (input)="searchHotels(hotelNameInput.value, locationInput.value)"
-      placeholder="Going To?"
-    />
-  </mat-form-field>
-</div> -->
+
 <div class="search-bar">
   <p>Where To?</p>
-  <mat-form-field>
-    <input
+  <mat-form-field class="search-field">
+    <input 
       matInput
       #hotelNameInput
       (input)="onSearchInput()"
       placeholder="Search Hotel?"
     />
   </mat-form-field>
-  <mat-form-field>
-    <input
+  <mat-form-field class="search-field">
+    <input 
       matInput
       #locationInput
       (input)="onSearchInput()"
