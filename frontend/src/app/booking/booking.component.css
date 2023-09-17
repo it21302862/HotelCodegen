@@ -69,12 +69,14 @@ h3{
 }
 /* Style the fonts for supplements */
 .supplements-form {
-  font-size: 16px;
-  width:700px;
-  height:500px;
-  margin-bottom: 20px;
-  margin-left: 400px;
-  margin-top: 20px;
+  justify-content: space-between;
+  width: 700px;
+  height: 500px;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: #ccc;
   background-color: white;
   border-radius: 8px; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

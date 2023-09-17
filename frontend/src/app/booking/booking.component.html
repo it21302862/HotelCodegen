@@ -43,6 +43,7 @@
     </div>
   </mat-tab>
   <mat-tab label="Second">
+    <div class="grid grid-cols-2 gap-4">
     <div *ngIf="supplements.length > 0">
       <form class="supplements-form">
         <h3>SELECT YOUR SUPPLEMENTS</h3>
@@ -65,6 +66,19 @@
 
     <div *ngIf="error !== null">
       <p>Error: {{ error }}</p>
+    </div>
+
+    <div>
+      <mat-card class="card">
+        <mat-card-content>
+          <!-- Display basic information -->
+          <p class="card-text">Check-in Date: {{ checkIn }}</p>
+          <p class="card-text">Check-out Date: {{ checkOut }}</p>
+          <p class="card-text">Number of Guests: {{ noOfPax }}</p>
+          <p class="card-text">Base Price: {{ roomPrice }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
     </div>
   </mat-tab>
   <mat-tab label="Third">
