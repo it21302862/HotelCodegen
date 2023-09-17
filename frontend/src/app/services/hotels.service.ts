@@ -17,6 +17,7 @@ export class HotelService {
     return this.http.get<Hotel[]>(`${this.apiServerUrl}/api/v1/hotels/hotels`);
   }
 
+
   public addHotel(hotel: Hotel): Observable<Hotel> {
     return this.http.post<Hotel>(`${this.apiServerUrl}/api/v1/hotels/hotel`, hotel);
   }

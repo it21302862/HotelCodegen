@@ -1,42 +1,76 @@
+<mat-tab-group>
+  <mat-tab label="First">
+    <div class="grid grid-cols-2 gap-4">
+      <form class="form">
 
+        <h3>PERSONAL DETAILS</h3>
+        <!-- Check-in Date -->
+        <mat-form-field class="full-width">
+          <mat-label>First Name</mat-label>
+          <input class="mat-input-element"matInput name="checkIn" />
+        </mat-form-field>
 
+        <!-- Check-out Date -->
+        <mat-form-field class="full-width">
+          <mat-label>Last Name</mat-label>
+          <input class="mat-input-element" matInput name="checkOut" />
+        </mat-form-field>
 
-  <mat-tab-group>
-    <mat-tab label="First"> 
-      <!-- Display basic information -->
-      <p>Check-in Date: {{ checkIn }}</p>
-      <p>Check-out Date: {{ checkOut }}</p>
-      <p>Number of Guests: {{ noOfPax }}</p>
-      <p>Room Price: {{ roomPrice }}</p>
-    </mat-tab>
-    <mat-tab label="Second"> 
-      <div *ngIf="supplements.length > 0">
-        <h3>Supplements</h3>
-        <form>
-          <!-- Display supplements with checkboxes -->
-          <ul>
-            <li *ngFor="let supplement of supplements">
-              <label>
-                <input type="checkbox" (change)="onSupplementCheckboxChange(supplement)" [(ngModel)]="supplement.selected" name="selectedSupplements">
-                {{ supplement.supplementName }}
-              </label>
-            </li>
-          </ul>
-        </form>
+        <!-- Number of Guests -->
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input class="mat-input-element"matInput type="email" name="noOfPax" />
+        </mat-form-field>
+
+        <!-- Room Price -->
+        <mat-form-field class="full-width">
+          <mat-label>Telephone</mat-label>
+          <input class="mat-input-element"matInput type="phone" name="roomPrice" />
+        </mat-form-field>
+      </form>
+
+      <div>
+        <mat-card class="card">
+          <mat-card-content>
+            <!-- Display basic information -->
+            <p class="card-text">Check-in Date: {{ checkIn }}</p>
+            <p class="card-text">Check-out Date: {{ checkOut }}</p>
+            <p class="card-text">Number of Guests: {{ noOfPax }}</p>
+            <p class="card-text">Base Price: {{ roomPrice }}</p>
+          </mat-card-content>
+        </mat-card>
       </div>
-      
-      <div *ngIf="error !== null">
-        <p>Error: {{ error }}</p>
-      </div>
-    </mat-tab>
-    <mat-tab label="Third"> 
-    
-      <div *ngIf="finalPrice !== null">
-        <p>Final Price: {{ finalPrice }}</p>
-      </div>
-      <button (click)="displayFinalPrice()">Display Final Price</button>
-    </mat-tab>
-  </mat-tab-group>
-  
-  
-  
+    </div>
+  </mat-tab>
+  <mat-tab label="Second">
+    <div *ngIf="supplements.length > 0">
+      <form class="supplements-form">
+        <h3>SELECT YOUR SUPPLEMENTS</h3>
+        <!-- Display supplements with checkboxes -->
+        <ul>
+          <li *ngFor="let supplement of supplements">
+            <label>
+              <input
+                type="checkbox"
+                (change)="onSupplementCheckboxChange(supplement)"
+                [(ngModel)]="supplement.selected"
+                name="selectedSupplements"
+              />
+              {{ supplement.supplementName }}
+            </label>
+          </li>
+        </ul>
+      </form>
+    </div>
+
+    <div *ngIf="error !== null">
+      <p>Error: {{ error }}</p>
+    </div>
+  </mat-tab>
+  <mat-tab label="Third">
+    <div *ngIf="finalPrice !== null">
+      <p>Final Price: {{ finalPrice }}</p>
+    </div>
+    <button (click)="displayFinalPrice()">Display Final Price</button>
+  </mat-tab>
+</mat-tab-group>
