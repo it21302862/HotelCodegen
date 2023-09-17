@@ -33,6 +33,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { GridListComponent } from './grid-list/grid-list.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ContactComponent } from './contact/contact.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ContactComponent } from './contact/contact.component';
     BookingComponent,
     TestComponent,
     GridListComponent,
-    ContactComponent
+    ContactComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

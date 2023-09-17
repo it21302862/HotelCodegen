@@ -7,10 +7,12 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BookingComponent } from './booking/booking.component'; 
 import { ContactComponent } from './contact/contact.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeDisplayHotelsComponent },
+  {path:'',component:HomePageComponent},
+  { path: 'hotels', component: HomeDisplayHotelsComponent },
   { path: 'admin', component: HotelDisplayAdminComponent },
   { path: 'room-types/:hotelID', component: RoomTypeComponent },
   { path: 'dashboard', component: SlideBarComponent },

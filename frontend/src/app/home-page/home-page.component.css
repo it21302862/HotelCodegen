@@ -1,0 +1,19 @@
+/* Define custom animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 3; transform: translateX(0); }
+  }
+  
+  /* Apply animation to the paragraph */
+  .text-lg {
+    animation: fadeIn 1s ease-in-out;
+    color: rgb(106, 101, 101);
+  }
+
+  h1{
+    color:rgb(14, 14, 81) ;
+  }
+  
+  p{
+    font-size: 15px;
+  }
