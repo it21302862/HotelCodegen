@@ -10,12 +10,13 @@
     flex-wrap: wrap;
     justify-content: space-between; /* Adjust as needed */
     gap: 10px; 
-    color:rgb(14, 14, 81)/* Add gap between cards */
+    column-gap: 20px;
+    color:rgb(14, 14, 81)
   }
   
   .card-container .col-md-6 {
     flex: 0 0 calc(25% - 10px); /* Adjust as needed to ensure 4 cards per row */
-    margin-bottom: 0; /* Remove bottom margin */
+    margin-bottom: 10px; 
   }
   
   @media (min-width: 992px) {
