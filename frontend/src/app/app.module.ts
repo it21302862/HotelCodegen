@@ -34,6 +34,8 @@ import { GridListComponent } from './grid-list/grid-list.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ContractsAdminComponent } from './contracts-admin/contracts-admin.component';
+import { ContractAddEditComponent } from './contract-add-edit/contract-add-edit.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { HomePageComponent } from './home-page/home-page.component';
     TestComponent,
     GridListComponent,
     ContactComponent,
-    HomePageComponent
+    HomePageComponent,
+    ContractsAdminComponent,
+    ContractAddEditComponent
   ],
   imports: [
     BrowserModule,

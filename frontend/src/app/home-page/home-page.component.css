@@ -9,14 +9,7 @@
   .text-lg {
     animation: fadeIn 1s ease-in-out;
     color: rgb(106, 101, 101);
-  }
-
-  h1{
-    background: linear-gradient(135deg, aqua, pink); 
-    border-radius: 10px;
-    display: inline-block; 
-    padding: 10px 20px; 
-  }
+  } 
   
   p{
     font-size: 15px;

@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { Hotel } from './hotel';
 import { RoomType } from './roomtypes';
 import { environment } from '../environments/environment';
+import { HotelContractDTO } from './HotelContractDTO ';
+import {HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +15,11 @@ export class HotelService {
   private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http:HttpClient) { }
+
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  
 
   public getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(`${this.apiServerUrl}/api/v1/hotels/hotels`);
@@ -35,7 +43,14 @@ export class HotelService {
     return this.http.get<RoomType[]>(`${this.apiServerUrl}${url}`);
   }
   
+  public getAllContracts(): Observable<HotelContractDTO[]> {
+    return this.http.get<HotelContractDTO[]>(`${this.apiServerUrl}/api/v1/hotels/all`);
+  }
 
+  public createHotelContract(hotelContractDTO: HotelContractDTO): Observable<string> {
+    return this.http.post<string>(`${this.apiServerUrl}/api/v1/hotels/contract`, hotelContractDTO, this.httpOptions);
+  }
+  
 
 }
 

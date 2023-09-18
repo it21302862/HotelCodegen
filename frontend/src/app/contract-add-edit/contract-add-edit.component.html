@@ -1,0 +1,63 @@
+<div [formGroup]="contractForm" (ngSubmit)="onSubmit()">
+    <h2>Create a New Contract</h2>
+  
+    <!-- Contract Details -->
+    <div formGroupName="contract">
+      <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" formControlName="startDate" required>
+      </div>
+      <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" formControlName="endDate" required>
+      </div>
+      <div>
+        <label for="termsAndConditions">Terms and Conditions:</label>
+        <textarea id="termsAndConditions" formControlName="termsAndConditions" required></textarea>
+      </div>
+    </div>
+  
+    <!-- Hotel Details -->
+    <div formGroupName="hotel">
+      <div>
+        <label for="hotelName">Hotel ID:</label>
+        <input type="text" id="hotelID" formControlName="hotelID" required>
+      </div>
+    </div>
+  
+    <!-- Seasons -->
+   <!-- Seasons -->
+ <!-- <div *ngIf="contractForm && contractForm.get('seasons')" formArrayName="seasons">
+    <h3>Seasons</h3>
+    <div *ngFor="let seasonGroup of contractForm.get('seasons').controls; let i = index" [formGroupName]="i"></div>
+      <div>
+        <label for="seasonName">Season Name:</label>
+        <input type="text" id="seasonName" formControlName="seasonName" required>
+      </div>
+      <div>
+        <label for="seasonStartDate">Season Start Date:</label>
+        <input type="date" id="seasonStartDate" formControlName="seasonStartDate" required>
+      </div>
+      <div>
+        <label for="seasonEndDate">Season End Date:</label>
+        <input type="date" id="seasonEndDate" formControlName="seasonEndDate" required>
+      </div>
+      <button type="button" (click)="addSeason()">Add Season</button>
+    </div>
+</div> -->
+
+  
+  
+    <!-- Supplements -->
+    <!-- Add similar code for supplements, supplement prices, markup prices, discounts, room types, and room type prices -->
+  
+    <!-- Discounts -->
+  
+    <!-- Room Types -->
+  
+    <!-- Room Type Prices -->
+  
+    <button type="submit">Submit</button>
+  
+  
+  

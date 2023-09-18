@@ -44,11 +44,13 @@ export class BookingComponent implements OnInit {
         this.noOfPax !== null
       ) {
         this.calculatePrice();
-        this.displayFinalPrice();
+     
       } else {
         this.error = 'Invalid query parameters.';
       }
     });
+
+    this.displayFinalPrice();
   }
 
   calculatePrice() {

@@ -3,19 +3,23 @@
   rel="stylesheet"
 />
 
-<div class="z-[20] navbar">
-  <button mat-button routerLink="/">Home</button>
-  <button mat-button routerLink="/hotels">Hotels</button>
-  <button mat-button routerLink="/about-us">About</button>
-  <button mat-button routerLink="/contact">Contact</button>
-  <div class="dropdown dropdown-bottom dropdown-end">
-    <label tabindex="0" class="btn m-1">Admin Dashboard</label>
-    <ul tabindex="0" class="dropdown-content z-[20] menu p-2 shadow bg-base-100 rounded-box w-52">
-      <li><a routerLink="/admin">VIEW HOTELS</a></li>
-      <li><a>VIEW CONTRACTS</a></li>
-    </ul>
+
+  <div class="z-[20] navbar px-16">
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/hotels">Hotels</button>
+    <button mat-button routerLink="/about-us">About</button>
+    <button mat-button routerLink="/contact">Contact</button>
+    <div class="dropdown dropdown-bottom dropdown-end">
+      <label tabindex="0" class="btn m-1">Admin Dashboard</label>
+      <ul
+        tabindex="0"
+        class="dropdown-content z-[20] menu p-2 shadow bg-base-100 rounded-box w-52"
+      >
+        <li><a routerLink="/admin">VIEW HOTELS</a></li>
+        <li><a routerLink="/contracts">VIEW CONTRACTS</a></li>
+      </ul>
+    </div>
   </div>
-</div>
 
 
 <div class="" style="min-height: calc(100vh - 251px)">
@@ -25,7 +29,7 @@
 <footer>
   <div class="footer-content">
     <!-- Social Media Links -->
-    <div class="social-media">
+    <div class="social-media flex flex-row gap-5">
       <a href="https://facebook.com"> Facebook</a>
       <a href="https://twitter.com"> Twitter</a>
       <a href="https://instagram.com"> Instagram</a>
@@ -44,6 +48,3 @@
     </div>
   </div>
 </footer>
-
-
-
