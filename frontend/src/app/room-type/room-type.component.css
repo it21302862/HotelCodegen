@@ -8,17 +8,18 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px; /* Adjust the gap as needed */
+  column-gap: 20px;
   color:rgb(14, 14, 81)
 }
 
 .card-container .col-md-6 {
-  flex: 0 0 calc(20% - 5px); /* Adjust to ensure 2 cards per row and reduce gap */
-  margin-bottom: 0; /* Remove bottom margin */
+  flex: 0 0 calc(25% - 10px); /* Adjust to ensure 2 cards per row and reduce gap */
+  margin-bottom: 10px; /* Remove bottom margin */
 }
 
 @media (min-width: 992px) {
   .card-container .col-md-3 {
-    flex: 0 0 calc(50% - 5px); /* Adjust as needed for larger screens */
+    flex: 0 0 calc(25% - 10px); /* Adjust as needed for larger screens */
   }
 }
 
