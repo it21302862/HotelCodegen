@@ -11,6 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ContractsAdminComponent } from './contracts-admin/contracts-admin.component';
 
 
+
 const routes: Routes = [
   {path:'',component:HomePageComponent},
   { path: 'hotels', component: HomeDisplayHotelsComponent },
