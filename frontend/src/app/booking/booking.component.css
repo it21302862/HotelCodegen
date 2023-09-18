@@ -101,3 +101,56 @@ h3{
   color: red;
   font-weight: bold;
 }
+
+
+
+/* Style for the payment form container */
+.payment-form {
+  justify-content: space-between;
+  width: 700px;
+  height: 500px;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: #ccc;
+  background-color: white;
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for form labels */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 100px;
+}
+
+/* Style for form inputs */
+.form-group input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  margin-left: 100px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 15px 225px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 100px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0e0e51; 
+}
+

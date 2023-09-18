@@ -7,12 +7,15 @@ import { Reservation } from '../services/reservation';
 import { HttpParams } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
+
+
   contractId: number | null = null;
   roomTypeId: number | null = null;
   checkIn: string | null = null;
@@ -24,6 +27,7 @@ export class BookingComponent implements OnInit {
   supplements: Supplement[] = [];
   reservation: Reservation | null = null;
   finalPrice: number | null = null; 
+
 
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
@@ -44,13 +48,13 @@ export class BookingComponent implements OnInit {
         this.noOfPax !== null
       ) {
         this.calculatePrice();
-     
       } else {
         this.error = 'Invalid query parameters.';
+        
       }
     });
 
-    this.displayFinalPrice();
+   
   }
 
   calculatePrice() {
@@ -92,6 +96,7 @@ export class BookingComponent implements OnInit {
         (response: Supplement[]) => {
           this.supplements = response;
           console.log('Supplements:', this.supplements);
+        
         },
         (error: HttpErrorResponse) => {
           console.error('Error fetching supplements:', error);
@@ -114,7 +119,6 @@ export class BookingComponent implements OnInit {
   
       this.http.post<any>(url, null, { params }).subscribe(
         (response: any) => {
-
           console.log('Supplement added to reservation:', response);
         },
         (error: HttpErrorResponse) => {
@@ -122,6 +126,7 @@ export class BookingComponent implements OnInit {
         }
       );
     }
+   
   }
 
   
@@ -145,6 +150,10 @@ export class BookingComponent implements OnInit {
       );
     }
   }
+
+ 
+  
+
   
   
   
