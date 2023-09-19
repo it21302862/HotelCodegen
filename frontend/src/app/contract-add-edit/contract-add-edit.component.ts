@@ -109,8 +109,8 @@ export class ContractAddEditComponent implements OnInit {
   createSeason(): FormGroup {
     return this._fb.group({
       seasonName: [''],
-      seasonStartDate: [null],
-      seasonEndDate: [null],
+      startDate: [new Date(), Validators.required],
+      endDate: [new Date(), Validators.required],
     });
   }
 
