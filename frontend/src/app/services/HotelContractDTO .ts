@@ -9,6 +9,7 @@ import { RoomTypePriceDTO } from "./RoomTypePriceDTO";
 
 export interface HotelContractDTO {
     contractID: number;
+    hotelID: number;
     startDate: Date;
     endDate: Date;
     termsAndConditions: string;

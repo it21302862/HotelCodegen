@@ -1,4 +1,7 @@
-<div class="main-body">
+
+
+ 
+  <div class="main-body">
     <div class="header">
       <div class="spacer"></div>
       <button
@@ -48,6 +51,11 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header>condition</th>
           <td mat-cell *matCellDef="let row">{{ row.termsAndConditions }}</td>
         </ng-container>
+
+        <ng-container matColumnDef="hotelID">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>hotelID</th>
+          <td mat-cell *matCellDef="let row">{{ row.hotelID }}</td>
+        </ng-container>
   
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef>Action</th>
@@ -82,4 +90,9 @@
     </div>
   </div>
   </div>
-  
+
+
+
+
+
+

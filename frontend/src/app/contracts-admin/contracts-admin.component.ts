@@ -22,6 +22,7 @@ export class ContractsAdminComponent implements OnInit{
     'startDate',
     'endDate',
     'termsAndConditions',
+    'hotelID',
     'action',
   ];
 
@@ -59,19 +60,56 @@ export class ContractsAdminComponent implements OnInit{
     }
 
 
+    // public getHotelContractList(): void {
+    //   this._hotelService.getAllContracts().subscribe({
+    //     next: (res) => {
+    //       if (Array.isArray(res)) {
+    //         console.log('Data received from API:', res);
+    //         this.dataSource = new MatTableDataSource(res);
+    //         this.dataSource.sort = this.sort;
+    //         this.dataSource.paginator = this.paginator;
+    //         console.log('Data assigned to dataSource:', this.dataSource);
+    //       } else if (typeof res === 'object' && 'content' in res && Array.isArray(res['content'])) {
+    //         // Handle API response with a 'content' property containing an array
+    //         const contentArray = res['content'];
+    //         console.log('Data received from API:', contentArray);
+    //         this.dataSource = new MatTableDataSource(contentArray);
+    //         this.dataSource.sort = this.sort;
+    //         this.dataSource.paginator = this.paginator;
+    //         console.log('Data assigned to dataSource:', this.dataSource);
+    //       } else {
+    //         console.error('Unexpected API response format:', res);
+    //       }
+    //     },
+    //     error: (err) => {
+    //       console.error(err);
+    //     },
+    //   });
+    // }
+
+
     public getHotelContractList(): void {
       this._hotelService.getAllContracts().subscribe({
         next: (res) => {
           if (Array.isArray(res)) {
             console.log('Data received from API:', res);
+            // Map the hotelID property for each contract
+            res = res.map((contract: HotelContractDTO) => {
+              return { ...contract, hotelID: contract.hotel?.hotelID };
+            });
             this.dataSource = new MatTableDataSource(res);
             this.dataSource.sort = this.sort;
             this.dataSource.paginator = this.paginator;
             console.log('Data assigned to dataSource:', this.dataSource);
           } else if (typeof res === 'object' && 'content' in res && Array.isArray(res['content'])) {
             // Handle API response with a 'content' property containing an array
-            const contentArray = res['content'];
+            let contentArray: HotelContractDTO[] = res['content'] as HotelContractDTO[];
+
             console.log('Data received from API:', contentArray);
+            // Map the hotelID property for each contract
+            contentArray = contentArray.map((contract: HotelContractDTO) => {
+              return { ...contract, hotelID: contract.hotel?.hotelID };
+            });
             this.dataSource = new MatTableDataSource(contentArray);
             this.dataSource.sort = this.sort;
             this.dataSource.paginator = this.paginator;
@@ -85,6 +123,7 @@ export class ContractsAdminComponent implements OnInit{
         },
       });
     }
+    
 
    
 
