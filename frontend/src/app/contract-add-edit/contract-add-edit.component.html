@@ -1,19 +1,23 @@
-<form [formGroup]="contractFormGroup" (ngSubmit)="onSubmit()">
-  <h2>Create a New Contract</h2>
+<form [formGroup]="contractFormGroup" (ngSubmit)="onSubmit()" class="p-4 w-full mx-auto h-[500px]">
+  <h2 class="text-xl font-semibold mb-4">Create a New Contract</h2>
 
   <!-- Contract Details -->
-  <div formGroupName="contract">
-    <div>
+  <div formGroupName="contract" class="mb-4">
+    <div class="mb-2">
       <label for="startDate">Start Date:</label>
-      <input type="date" id="startDate" formControlName="startDate" required>
+      <input type="date" id="startDate" formControlName="startDate" required class="w-full rounded-md border-gray-300 px-2 py-1"/>
     </div>
     <div>
       <label for="endDate">End Date:</label>
-      <input type="date" id="endDate" formControlName="endDate" required>
+      <input type="date" id="endDate" formControlName="endDate" required />
     </div>
     <div>
       <label for="termsAndConditions">Terms and Conditions:</label>
-      <textarea id="termsAndConditions" formControlName="termsAndConditions" required></textarea>
+      <textarea
+        id="termsAndConditions"
+        formControlName="termsAndConditions"
+        required
+      ></textarea>
     </div>
   </div>
 
@@ -21,56 +25,166 @@
   <div formGroupName="hotel">
     <div>
       <label for="hotelID">Hotel ID:</label>
-      <input type="text" id="hotelID" formControlName="hotelID" required>
+      <input type="text" id="hotelID" formControlName="hotelID" required />
     </div>
   </div>
 
   <!-- Seasons -->
-  <!-- Seasons -->
-<!-- Seasons -->
-<div formArrayName="seasons">
-  <h3>Seasons</h3>
-  <button type="button" (click)="addSeason()">Add Season</button>
-  <div *ngFor="let season of seasons.controls; let i = index" [formGroupName]="i">
+  <div formArrayName="seasons">
+    <h3>Seasons</h3>
+    <button type="button" (click)="addSeason()">Add Season</button>
+    <div
+      *ngFor="let season of seasons.controls; let i = index"
+      [formGroupName]="i"
+      class="flex flex-wrap gap-4"
+    >
+      <div class="flex-1">
+        <label for="seasonName">Season Name:</label>
+        <input type="text" id="seasonName" formControlName="seasonName" />
+      </div>
+      <div class="flex-1">
+        <label for="seasonStartDate">Start Date:</label>
+        <input
+          type="date"
+          id="seasonStartDate"
+          formControlName="seasonStartDate"
+        />
+      </div>
+      <div class="flex-1">
+        <label for="seasonEndDate">End Date:</label>
+        <input type="date" id="seasonEndDate" formControlName="seasonEndDate" />
+      </div>
+      <button type="button" (click)="removeSeason(i)" class="mt-6 ml-2 bg-red-500 text-white px-2 py-1 rounded-md">Remove</button>
+    </div>
+  </div>
+  
+
+  <!-- Supplements -->
+  <div formArrayName="supplements">
+    <h3>Supplements</h3>
+    <button type="button" (click)="addSupplement()">Add Supplement</button>
+    <div
+      *ngFor="let supplement of supplements.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <div>
+        <label for="supplementName">Supplement Name:</label>
+        <input
+          type="text"
+          id="supplementName"
+          formControlName="supplementName"
+        />
+      </div>
+      <button type="button" (click)="removeSupplement(i)">Remove</button>
+    </div>
+  </div>
+
+   <!-- Supplement Prices-->
+<div formArrayName="supplementPrices">
+  <h3>Supplement Prices</h3>
+  <button type="button" (click)="addSupplementPrices()">Add Supplement Price</button>
+  <div *ngFor="let supplementPrice of supplementPrices.controls; let i = index" [formGroupName]="i">
     <div>
       <label for="seasonName">Season Name:</label>
       <input type="text" id="seasonName" formControlName="seasonName">
     </div>
     <div>
-      <label for="seasonStartDate">Start Date:</label>
-      <input type="date" id="seasonStartDate" formControlName="seasonStartDate">
-    </div>
-    <div>
-      <label for="seasonEndDate">End Date:</label>
-      <input type="date" id="seasonEndDate" formControlName="seasonEndDate">
-    </div>
-    <button type="button" (click)="removeSeason(i)">Remove</button>
-  </div>
-</div>
-
-
-
-  <!-- Supplements -->
- <!-- Supplements -->
-<div formArrayName="supplements">
-  <h3>Supplements</h3>
-  <button type="button" (click)="addSupplement()">Add Supplement</button>
-  <div *ngFor="let supplement of supplements.controls; let i = index" [formGroupName]="i">
-    <div>
       <label for="supplementName">Supplement Name:</label>
       <input type="text" id="supplementName" formControlName="supplementName">
     </div>
-    <!-- Add more fields for supplement details if needed -->
-    <button type="button" (click)="removeSupplement(i)">Remove</button>
+    <div>
+      <label for="price">Price:</label>
+      <input type="text" id="price" formControlName="price">
+    </div>
+    <button type="button" (click)="removeSupplementPrices(i)">Remove</button>
+  </div>
+</div>
+
+  <!-- Room Types -->
+<div formArrayName="roomTypes">
+  <h3>Room Types</h3>
+  <button type="button" (click)="addRoomTypes()">Add Room Type</button>
+  <div *ngFor="let roomType of roomTypes.controls; let i = index" [formGroupName]="i">
+    <div>
+      <label for="roomType">Room Type:</label>
+      <input type="text" id="roomType" formControlName="roomType">
+    </div>
+    <div>
+      <label for="noOfRooms">Number of Rooms:</label>
+      <input type="text" id="noOfRooms" formControlName="noOfRooms">
+    </div>
+    <div>
+      <label for="maxAdults">Maximum Adults:</label>
+      <input type="text" id="maxAdults" formControlName="maxAdults">
+    </div>
+    <button type="button" (click)="removeRoomTypes(i)">Remove</button>
   </div>
 </div>
 
 
-  <!-- Discounts -->
-
-  <!-- Room Types -->
-
   <!-- Room Type Prices -->
+<div formArrayName="roomTypePrices">
+  <h3>Room Type Prices</h3>
+  <button type="button" (click)="addRoomTypePrices()">Add Room Type Price</button>
+  <div *ngFor="let roomTypePrice of roomTypePrices.controls; let i = index" [formGroupName]="i">
+    <div>
+      <label for="seasonName">Season Name:</label>
+      <input type="text" id="seasonName" formControlName="seasonName">
+    </div>
+    <div>
+      <label for="roomType">Room Type:</label>
+      <input type="text" id="roomType" formControlName="roomType">
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="text" id="price" formControlName="price">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" id="description" formControlName="description">
+    </div>
+    <div>
+      <label for="imgUrl">Image URL:</label>
+      <input type="text" id="imgUrl" formControlName="imgUrl">
+    </div>
+    <button type="button" (click)="removeRoomTypePrices(i)">Remove</button>
+  </div>
+</div>
+
+<!-- Markup Prices -->
+<div formArrayName="markupPrices">
+  <h3>Markup Prices</h3>
+  <button type="button" (click)="addMarkupPrices()">Add Markup Price</button>
+  <div *ngFor="let markupPrice of markupPrices.controls; let i = index" [formGroupName]="i">
+    <div>
+      <label for="seasonName">Season Name:</label>
+      <input type="text" id="seasonName" formControlName="seasonName">
+    </div>
+    <div>
+      <label for="percentage">Percentage:</label>
+      <input type="number" id="percentage" formControlName="percentage">
+    </div>
+    <!-- Add more fields for markup price details if needed -->
+    <button type="button" (click)="removeMarkupPrices(i)">Remove</button>
+  </div>
+</div>
+
+
+<!-- Discounts -->
+<div formGroupName="discounts">
+  <h3>Discounts</h3>
+  <div>
+    <label for="discountPercentage">Discount Percentage:</label>
+    <input type="number" id="discountPercentage" formControlName="discountPercentage">
+  </div>
+  <div>
+    <label for="noOfDates">Number of Dates:</label>
+    <input type="number" id="noOfDates" formControlName="noOfDates">
+  </div>
+</div>
+
+
+
 
   <button type="submit">Submit</button>
 </form>

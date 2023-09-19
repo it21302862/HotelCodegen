@@ -15,6 +15,11 @@ export class ContractAddEditComponent implements OnInit {
   contractFormGroup!: FormGroup;
   seasons!: FormArray; // Define seasons as a FormArray
   supplements!:FormArray;
+  roomTypes!:FormArray;
+  roomTypePrices!:FormArray;
+  supplementPrices!:FormArray;
+  markupPrices!:FormArray;
+  discounts!: FormGroup;
 
   constructor(
     private _fb: FormBuilder,
@@ -28,8 +33,15 @@ export class ContractAddEditComponent implements OnInit {
     this.contractFormGroup = this.createContractForm();
     this.seasons = this.contractFormGroup.get('seasons') as FormArray; // Initialize seasons as a FormArray
     this.supplements = this.contractFormGroup.get('supplements') as FormArray;
+    this.roomTypes=this.contractFormGroup.get('roomTypes') as FormArray;
+    this.roomTypePrices=this.contractFormGroup.get('roomTypePrices') as FormArray;
+    this.supplementPrices=this.contractFormGroup.get('supplementPrices') as FormArray;
+    this.markupPrices=this.contractFormGroup.get('markupPrices') as FormArray;
+    this.discounts=this.contractFormGroup.get('discounts') as FormGroup;
   }
 
+  //add
+  
   addSeason() {
     this.seasons.push(this.createSeason());
   }
@@ -39,6 +51,29 @@ export class ContractAddEditComponent implements OnInit {
     this.supplements.push(supplement);
   }
   
+  addRoomTypes() {
+    this.roomTypes.push(this.createRoomTypes());
+  }
+
+  addRoomTypePrices() {
+    this.roomTypePrices.push(this.createRoomTypePrices());
+  }
+
+  addSupplementPrices() {
+    this.supplementPrices.push(this.createSupplementPrices());
+  }
+
+  addMarkupPrices() {
+    this.markupPrices.push(this.createMarkupPrices());
+  }
+
+  addDiscount() {
+    const discount = this.createDiscount();
+    this.discounts.setValue(discount);
+  }
+
+
+  //remove
 
   removeSeason(index: number) {
     this.seasons.removeAt(index);
@@ -48,11 +83,34 @@ export class ContractAddEditComponent implements OnInit {
     this.supplements.removeAt(index);
   }
 
+  removeRoomTypes(index: number) {
+    this.roomTypes.removeAt(index);
+  }
+
+  removeRoomTypePrices(index: number) {
+    this.roomTypePrices.removeAt(index);
+  }
+
+  removeSupplementPrices(index: number) {
+    this.supplementPrices.removeAt(index);
+  }
+
+  removeMarkupPrices(index: number) {
+    this.markupPrices.removeAt(index);
+  }
+
+  removeDiscount() {
+    this.discounts.reset(); // Reset the discounts FormGroup
+  }
+
+
+  //create
+
   createSeason(): FormGroup {
     return this._fb.group({
       seasonName: [''],
-      seasonStartDate: [''],
-      seasonEndDate: [''],
+      seasonStartDate: [null],
+      seasonEndDate: [null],
     });
   }
 
@@ -61,6 +119,48 @@ export class ContractAddEditComponent implements OnInit {
       supplementName: [''],
     });
   }
+
+  createRoomTypes(): FormGroup {
+    return this._fb.group({
+      roomType: [''],
+      noOfRooms: [''],
+      maxAdults: [''],
+    });
+  }
+
+  createRoomTypePrices(): FormGroup {
+    return this._fb.group({
+      seasonName: [''],
+      roomType: [''],
+      price: [''],
+      description:[''],
+      imgUrl:['']
+    });
+  }
+
+  createSupplementPrices(): FormGroup {
+    return this._fb.group({
+      seasonName: [''],
+      supplementName: [''],
+      price: ['']
+    });
+  }
+
+  createMarkupPrices(): FormGroup {
+    return this._fb.group({
+      seasonName: [''],
+      percentage: ['']
+    });
+  }
+
+  createDiscount(): FormGroup {
+    return this._fb.group({
+      discountPercentage: [0.1],
+      noOfDates: [0]
+    });
+  }
+
+  //create Form
 
   createContractForm(): FormGroup {
     return this._fb.group({
@@ -73,14 +173,11 @@ export class ContractAddEditComponent implements OnInit {
       }),
       seasons: this._fb.array([]),
       supplements: this._fb.array([]),
-      supplementPrices: [[]],
-      markupPrices: [[]],
-      discounts: this._fb.group({
-        discountPercentage: [0.1, [Validators.required, Validators.min(0)]],
-        noOfDates: [0, [Validators.required, Validators.min(0)]]
-      }),
-      roomTypes: [[]],
-      roomTypePrices: [[]]
+      supplementPrices: this._fb.array([]),
+      markupPrices: this._fb.array([]),
+      discounts: this.createDiscount(),
+      roomTypes:this._fb.array([]),
+      roomTypePrices: this._fb.array([]),
     });
   }
 
