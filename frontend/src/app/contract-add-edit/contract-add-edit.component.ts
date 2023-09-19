@@ -123,8 +123,8 @@ export class ContractAddEditComponent implements OnInit {
   createRoomTypes(): FormGroup {
     return this._fb.group({
       roomType: [''],
-      noOfRooms: [''],
-      maxAdults: [''],
+      noOfRooms: [0],
+      maxAdults: [0],
     });
   }
 
